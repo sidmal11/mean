@@ -16,7 +16,7 @@
   "scripts": {
     "ng":"ng",
     "start:server": "nodemon server.js",
-    "preinstall": "npm i -g angular-cli",
+    "preinstall": "npm install -g @angular/cli@latest",
     "heroku-postbuild": " cd client && npm cache clean --force && npm i ",
     "postinstall": "ng build --prod",
     "start":"node server.js"
