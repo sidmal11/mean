@@ -3,23 +3,24 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.1102.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2",
     "mongoose-unique-validator": "^2.0.3",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
-    "@angular-devkit/build-angular": "~0.1102.6",
     "tslib": "^2.0.0"
   },
   "scripts": {
-    "ng":"ng",
+    "ng": "ng",
     "start:server": "nodemon server.js",
     "preinstall": "npm install -g @angular/cli@latest",
     "heroku-postbuild": " cd client && npm i && ng build --prod",
-    "start":"node server.js"
+    "start": "node server.js"
   },
   "devDependencies": {
     "mongoose-unique-validator": "^2.0.3",

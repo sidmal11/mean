@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const postsRoutes = require("./routes/posts");
 const userRoutes = require("./routes/user");
+const cors = require("cors");
 
 const app = express();
 const connectConfig = {
@@ -12,7 +13,7 @@ const connectConfig = {
 };
 
 app.use(bodyParser.json());
-app.use(cors);
+app.use(cors());
 
 // Serve only the static files form the dist directory
 app.use(express.static("./dist/datis-ui"));
