@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@angular-devkit/build-angular": "~0.1102.6",
+    "@angular/cli": "^11.2.7",
+    "@angular/compiler-cli": "^11.2.8",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -19,7 +21,7 @@
     "ng": "ng",
     "start:server": "nodemon server.js",
     "preinstall": "npm install -g @angular/cli@latest",
-    "heroku-postbuild": " cd client && npm i && ng  build --aot --prod --output-hashing none",
+    "heroku-postbuild": " cd client && npm i && ng build --aot --prod",
     "start": "node server.js"
   },
   "devDependencies": {

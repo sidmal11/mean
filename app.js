@@ -12,14 +12,13 @@ const connectConfig = {
   useUnifiedTopology: true,
 };
 
-app.use(bodyParser.json());
 app.use(cors());
 
+
+
 // Serve only the static files form the dist directory
-app.use(express.static("./client/dist/datis-ui"));
-app.get("/*", (req, res) =>
-  res.sendFile("index.html", { root: "./client/dist/datis-ui" })
-);
+app.use("/",express.static(path.join(__dirname,"dist/datis-ui")));
+
 
 mongoose
   .connect(
@@ -39,6 +38,7 @@ mongoose
 // app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(express.json());
 //app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -55,5 +55,7 @@ app.use((req, res, next) => {
 
 app.use("/api/posts", postsRoutes);
 app.use("/api/user", userRoutes);
-
+// app.use( (req, res) =>{
+//   res.sendFile(path.join(__dirname,"dist/datis-ui","index.html"));
+//   });
 module.exports = app;
