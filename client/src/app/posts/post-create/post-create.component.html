@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onSavePost(postForm)" #postForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="name"
+        [ngModel]="post?.name"
+        required
+        minlength="3"
+        placeholder="Enter name"
+        #name="ngModel">
+      <mat-error *ngIf="name.invalid">Please enter valid first Name.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type = "number"
+        name="salary"
+        [ngModel]="post?.salary"
+        required
+        placeholder="Salary"
+        #salary="ngModel">
+      <mat-error *ngIf="salary.invalid">Please enter valid salary.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type = "number"
+        name="eid"
+        [ngModel]="post?.eid"
+        required
+        placeholder="Employee id"
+        #eid="ngModel">
+      <mat-error *ngIf="eid.invalid">Please enter valid salary.</mat-error>
+      <mat-error *ngIf="eid.invalid">Please enter valid salary.</mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit">Save Employee</button>
+  </form>
+</mat-card>
