@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Serve only the static files form the dist directory
-app.use(express.static("./dist/datis-ui"));
+app.use(express.static("../dist/datis-ui"));
 app.get("/*", (req, res) =>
-  res.sendFile("index.html", { root: "./client/dist/datis-ui/" })
+  res.sendFile("index.html", { root: "../dist/datis-ui" })
 );
 
 mongoose
