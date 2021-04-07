@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start:server": "nodemon server.js",
-    "heroku-postbuild": "cd client && npm i && ng build --prod",
+    "heroku-postbuild": "npm cache clean --force && cd client && npm i && ng build --prod",
     "start":"node server.js"
   },
   "devDependencies": {
